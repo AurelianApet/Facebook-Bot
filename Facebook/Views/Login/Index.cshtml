@@ -1,0 +1,102 @@
+﻿@model Facebook.Models.tbl_userlist
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>페이스북 봇 로그인</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link href="~/Content/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/style.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/theme/default.css" rel="stylesheet" id="theme" />
+    <script src="~/Content/assets/plugins/pace/pace.min.js"></script>
+    <style>
+        .logo{
+            width: 80px!important;
+            height: 80px!important;
+        }
+        .logo-head{
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body class="pace-top">
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+
+    <div class="login-cover">
+        <div class="login-cover-image"><img src="~/Content/assets/img/login-bg/bg-1.jpg" data-id="login-cover-image" alt="" /></div>
+        <div class="login-cover-bg"></div>
+    </div>
+    <div id="page-container" class="fade">
+        <div class="login login-v2" data-pageload-addclass="animated fadeIn">
+            <div class="login-header">
+                <div class="logo-head">
+                    <img src="~/Content/logo.PNG" class="logo"> 굿라이프론
+                </div>
+                <div class="icon">
+                    <i class="fa fa-sign-in"></i>
+                </div>
+            </div>
+            <div class="login-content">
+                @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="form-group m-b-20">
+                        @*<input type="text" class="form-control input-lg" placeholder="이메일" required />*@
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", placeholder = "이메일" } })
+                    </div>
+                    <div class="form-group m-b-20">
+                        @*<input type="password" class="form-control input-lg" placeholder="비번" required />*@
+                        @Html.PasswordFor(model => model.password, new { @class = "form-control", placeholder = "비번" })
+                    </div>
+                    <div class="checkbox m-b-20">
+                        <label>
+                            @Html.CheckBox("save", false)저장
+                        </label>
+                    </div>
+                    <div class="login-buttons">
+                        <button type="submit" class="btn btn-success btn-block btn-lg">로그인</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script src="~/Content/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="~/Content/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="~/Content/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="~/Content/assets/js/login-v2.demo.min.js"></script>
+    <script src="~/Content/assets/js/apps.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            App.init();
+            LoginV2.init();
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-53034621-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

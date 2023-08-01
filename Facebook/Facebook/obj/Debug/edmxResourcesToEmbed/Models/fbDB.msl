@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="facebookModelStoreContainer" CdmEntityContainer="facebookEntities">
+    <EntitySetMapping Name="tbl_client">
+      <EntityTypeMapping TypeName="facebookModel.tbl_client">
+        <MappingFragment StoreEntitySet="tbl_client">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="created_time" ColumnName="created_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_filed_data">
+      <EntityTypeMapping TypeName="facebookModel.tbl_filed_data">
+        <MappingFragment StoreEntitySet="tbl_filed_data">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="values" ColumnName="values" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_post">
+      <EntityTypeMapping TypeName="facebookModel.tbl_post">
+        <MappingFragment StoreEntitySet="tbl_post">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="post_id" ColumnName="post_id" />
+          <ScalarProperty Name="locale" ColumnName="locale" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_userlist">
+      <EntityTypeMapping TypeName="facebookModel.tbl_userlist">
+        <MappingFragment StoreEntitySet="tbl_userlist">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="page_id" ColumnName="page_id" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
